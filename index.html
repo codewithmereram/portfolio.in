@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Prince Chaurasiya's Portfolio - Software Developer specializing in Web Development, with skills in HTML, CSS, JavaScript, React, Node.js, and more. Explore my projects, education, and experience." />
+  <meta name="keywords"
+    content="Prince Chaurasiya, Software Developer, Web Developer, Portfolio, React, Node.js, JavaScript, HTML, CSS" />
+  <meta name="author" content="Prince Chaurasiya" />
+  <meta property="og:title" content="Prince Chaurasiya's Portfolio" />
+  <meta property="og:description"
+    content="Dedicated Software Developer passionate about building innovative web solutions." />
+  <meta property="og:image" content="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" />
+  <meta property="og:url" content="https://your-portfolio-url.com" />
+  <!-- Replace with actual URL -->
+  <meta name="robots" content="index, follow" />
+  <title>👋Hi, I'm Prince Chaurasiya - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Box Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Google Fonts & Background coding flow  -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <!-- Add AOS for modern animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body onload="initAnimations()">
+  <!-- CAPTCHA Overlay -->
+  <div class="captcha-overlay" id="captcha-overlay">
+    <div class="captcha">
+      <h3>Verify You're Human</h3>
+      <div class="captcha-checkbox">
+        <label>
+          <input type="checkbox" id="captcha-checkbox" onclick="verifyHuman()" />
+          <span class="checkmark"></span>
+        </label>
+        <span class="captcha-text">I'm not a robot</span>
+      </div>
+      <div class="captcha-loader" id="captcha-loader"></div>
+    </div>
+  </div>
+
+  <div id="particles-js"></div>
+
+  <!-- Header Design -->
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" alt="Logo" class="logo-img" />Portfolio
+    </a>
+    <div class="bx bx-menu" id="menu-icon">
+      <span class="animate" style="--i: 2"></span>
+    </div>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#social-media">Social Media</a>
+      <a href="#feedback">feedback</a>
+      <a href="#contact">Contact</a>
+      <a href="#login" id="login-link">Login/Signup</a>
+      <span class="active-nav"></span>
+      <span class="animate" style="--i: 2"></span>
+    </nav>
+    <div class="theme-toggle">
+      <i class="bx bx-moon" id="darkMode-icon"></i>
+    </div>
+  </header>
+
+  <!-- Loading Animation -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loader-container">
+      <div class="loader"></div>
+      <div class="loader-logo"></div>
+    </div>
+    <div class="loading-text">Welcome to My Portfolio</div>
+    <div class="loading-progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="loading-percentage" id="loading-percentage">0%</div>
+    <div class="loading-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div id="scroll-progress-bar" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: #00abf0;
+        width: 0;
+        z-index: 1000;
+      "></div>
+
+  <!-- Home Section Design -->
+  <section class="home show-animate" id="home">
+    <div class="home-content">
+      <h1>
+        Hi, I'm <span>Prince Chaurasiya</span><span class="animate" style="--i: 2"></span>
+      </h1>
+      <div class="text-animate">
+        <h3>Web Developer</h3>
+        <h3>Full Stack Developer</h3>
+        <span class="animate" style="--i: 3"></span>
+      </div>
+      <p>
+        I am a dedicated and confident learner, always eager to acquire new
+        skills. With a strong passion for Web and Software Development, I aim
+        to contribute meaningfully to a professional organization with
+        sincerity, diligence, and commitment.
+        <span class="animate" style="--i: 4"></span>
+      </p>
+      <div class="btn-box">
+        <a href="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" class="btn">Hire Me</a>
+        <a href="#contact" class="btn">Let's Talk</a>
+        <a href="https://ik.imagekit.io/sguvpu53p/MyResume%20(1).docx?updatedAt=1757511006439" class="btn">Download
+          Resume</a>
+        <span class="animate" style="--i: 5"></span>
+      </div>
+    </div>
+    <div class="home-sci">
+      <a href="https://www.linkedin.com/in/prince-chaurasiya-07625a323"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/codewithmereram"><i class="bx bxl-github"></i></a>
+      <a href="https://x.com/princeC9091"><i class="bx bxl-twitter"></i></a>
+      <a href="https://www.facebook.com/people/MrPrince-Chaurasiya/61555385261820"><i class="bx bxl-facebook"></i></a>
+      <span class="animate" style="--i: 6"></span>
+    </div>
+    <!-- <div class="home-image">
+        <img src="#" alt="Prince Chaurasiya">
+      </div> -->
+    <span class="home-image" style="--i: 7"></span>
+  </section>
+
+  <!-- About Section Design -->
+  <section class="about" id="about" data-aos="fade-up">
+    <h2 class="heading">
+      About <span>Me</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="about-img" data-aos="zoom-in">
+      <img src="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" alt="Prince Chaurasiya" />
+      <span class="circle-spin"></span>
+      <span class="animate scroll" style="--i: 2"></span>
+    </div>
+    <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+      <h3>
+        Hi there! Glad to see you here.<span class="animate scroll" style="--i: 3"></span>
+      </h3>
+      <p>
+        I'm Prince Chaurasiya, a technology enthusiast with a passion for
+        building innovative web and software solutions. I specialize in
+        creating responsive, user-friendly applications using modern
+        technologies like HTML, CSS, JavaScript, React, REST API, and Node.js.
+        My goal is to deliver impactful projects while continuously learning
+        and adapting to new challenges.
+        <span class="animate scroll" style="--i: 4"></span>
+      </p>
+      <div class="btn-box btns">
+        <a href="#contact" class="btn">Contact Me</a>
+        <span class="animate scroll" style="--i: 5"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section Design -->
+  <section class="education" id="education" data-aos="fade-up">
+    <h2 class="heading">
+      My <span>Journey</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="education-row">
+      <div class="education-column" data-aos="fade-right">
+        <h3 class="title">
+          Education<span class="animate scroll" style="--i: 2"></span>
+        </h3>
+        <div class="education-box">
+          <div class="education-content" data-aos="fade-up" data-aos-delay="100">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2020 - 2022
+              </div>
+              <h3>10th - NVP Inter College, Reotipur, Ghazipur</h3>
+              <p>Secondary (10th) - UP Board, Percentage: 64.167%</p>
+            </div>
+          </div>
+          <div class="education-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2022 - 2024
+              </div>
+              <h3>12th - NVP Inter College, Reotipur, Ghazipur</h3>
+              <p>12th - UP Board, Percentage: 49%</p>
+            </div>
+          </div>
+          <div class="education-content" data-aos="fade-up" data-aos-delay="300">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2024 - Present
+              </div>
+              <h3>
+                BCA - Maharishi University of Information Technology, Lucknow
+              </h3>
+              <p>
+                Bachelor of Computer Applications (BCA), Currently Pursuing
+              </p>
+            </div>
+          </div>
+          <span class="animate scroll" style="--i: 3"></span>
+        </div>
+      </div>
+      <div class="education-column" data-aos="fade-left">
+        <h3 class="title">
+          Experience<span class="animate scroll" style="--i: 5"></span>
+        </h3>
+        <div class="education-box">
+          <div class="education-content" data-aos="fade-up" data-aos-delay="100">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2023 - 2024
+              </div>
+              <h3>Web Development - SIGMAIT</h3>
+              <p>
+                Developed responsive websites using HTML, CSS, JavaScript, and
+                React. Utilized Git/GitHub for version control and agile
+                methodologies for efficient project delivery.
+              </p>
+            </div>
+          </div>
+          <div class="education-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2024 - 2025
+              </div>
+              <h3>Software Developer - Appinventiv</h3>
+              <p>
+                Built scalable mobile and web applications using modern tech
+                stacks. Integrated APIs and third-party services to enhance
+                functionality and user experience.
+              </p>
+            </div>
+          </div>
+          <div class="education-content" data-aos="fade-up" data-aos-delay="300">
+            <div class="content">
+              <div class="year">
+                <i class="bx bxs-calendar"></i> 2025 - Present
+              </div>
+              <h3>Web Developer - Mind You Infotech</h3>
+              <p>
+                Designed and maintained responsive web applications using
+                HTML, CSS, JavaScript, and modern frameworks, following best
+                practices and agile methodologies.
+              </p>
+            </div>
+          </div>
+          <span class="animate scroll" style="--i: 6"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section Design -->
+  <section class="skills" id="skills" data-aos="fade-up">
+    <h2 class="heading">
+      My <span>Skills</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="skills-row">
+      <div class="skills-column" data-aos="fade-right">
+        <h3 class="title">
+          Coding Skills<span class="animate scroll" style="--i: 2"></span>
+        </h3>
+        <div class="skills-box">
+          <div class="skills-content">
+            <div class="progress" data-aos="fade-right" data-aos-delay="100">
+              <h3>HTML <span>90%</span></h3>
+              <div class="bar"><span style="--skill-level: 90%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="200">
+              <h3>JavaScript <span>85%</span></h3>
+              <div class="bar"><span style="--skill-level: 85%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="300">
+              <h3>Python <span>70%</span></h3>
+              <div class="bar"><span style="--skill-level: 70%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="400">
+              <h3>CSS <span>80%</span></h3>
+              <div class="bar"><span style="--skill-level: 80%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="500">
+              <h3>MongoDB <span>75%</span></h3>
+              <div class="bar"><span style="--skill-level: 75%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="600">
+              <h3>REST API <span>80%</span></h3>
+              <div class="bar"><span style="--skill-level: 80%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-right" data-aos-delay="700">
+              <h3>DSA <span>65%</span></h3>
+              <div class="bar"><span style="--skill-level: 65%"></span></div>
+            </div>
+          </div>
+          <span class="animate scroll" style="--i: 3"></span>
+        </div>
+      </div>
+      <div class="skills-column" data-aos="fade-left">
+        <h3 class="title">
+          Professional Skills<span class="animate scroll" style="--i: 5"></span>
+        </h3>
+        <div class="skills-box">
+          <div class="skills-content">
+            <div class="progress" data-aos="fade-left" data-aos-delay="100">
+              <h3>Web Development <span>90%</span></h3>
+              <div class="bar"><span style="--skill-level: 90%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="200">
+              <h3>Frontend Developer <span>85%</span></h3>
+              <div class="bar"><span style="--skill-level: 85%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="300">
+              <h3>Software Developer <span>80%</span></h3>
+              <div class="bar"><span style="--skill-level: 80%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="400">
+              <h3>Full-Stack Developer <span>75%</span></h3>
+              <div class="bar"><span style="--skill-level: 75%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="500">
+              <h3>MySQL <span>85%</span></h3>
+              <div class="bar"><span style="--skill-level: 85%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="600">
+              <h3>AI ML <span>60%</span></h3>
+              <div class="bar"><span style="--skill-level: 60%"></span></div>
+            </div>
+            <div class="progress" data-aos="fade-left" data-aos-delay="700">
+              <h3>Management/Communication<span>75%</span></h3>
+              <div class="bar"><span style="--skill-level: 75%"></span></div>
+            </div>
+          </div>
+          <span class="animate scroll" style="--i: 6"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section Design -->
+  <section class="projects" id="projects" data-aos="fade-up">
+    <h2 class="heading">
+      My <span>Projects</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="projects-row">
+      <!-- Left Column -->
+      <div class="projects-column" data-aos="fade-right">
+        <h3 class="title">
+          Featured Projects<span class="animate scroll" style="--i: 2"></span>
+        </h3>
+        <div class="projects-box">
+          <!-- Project 1 -->
+          <div class="projects-content" data-aos="zoom-in" data-aos-delay="100">
+            <div class="content">
+              <div class="project-img">
+                <img
+                  src="https://imgs.search.brave.com/RK4-MT-hMaNK9_3GdZKcNJePRzmi2-Dh-7jBiBoE2Sc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJhbWVyLmNvbS9j/cmVhdG9ycy1hc3Nl/dHMvX25leHQvaW1h/Z2UvP3VybD1odHRw/czovL3k0cGRnbmVw/Z3N3cWZmcHQucHVi/bGljLmJsb2IudmVy/Y2VsLXN0b3JhZ2Uu/Y29tL3RlbXBsYXRl/cy81MDcxNi9wb3J0/Zm9saXRlLXRTZHdM/Mno3dU1GNklCdUd6/aEVVZ2JDbUNLZnJn/dCZ3PTM4NDAmcT05/MA"
+                  alt="Portfolio Website" />
+              </div>
+              <div class="year"><i class="bx bxs-calendar"></i> 2023</div>
+              <h3>Personal Portfolio Website</h3>
+              <p>
+                A responsive portfolio website showcasing my skills,
+                education, and projects. Built with modern web technologies,
+                featuring smooth animations and a dark mode toggle for
+                enhanced user experience.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="btn-box">
+                <a href="https://codewithmereram.github.io/portfolio.in/" class="btn">Live Demo</a>
+                <a href="https://codewithmereram.github/portfolio.in/" class="btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="projects-content" data-aos="zoom-in" data-aos-delay="200">
+            <div class="content">
+              <div class="project-img">
+                <img
+                  src="https://imgs.search.brave.com/7120FuhybEXwpXQ3N0Z-uxvbUkOhn8jPq_KKCcwIo2s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDcv/OTk0LzY4NC9zbWFs/bC9idXNpbmVzcy1t/YW4tZmluZ2VycHJp/bnQtc2Nhbm5pbmct/YW5kLWJpb21ldHJp/Yy1hdXRoZW50aWNh/dGlvbi1jeWJlcnNl/Y3VyaXR5LWFuZC1m/aW5nZXJwcmludC1w/YXNzd29yZC1mdXR1/cmUtdGVjaG5vbG9n/eS1hbmQtY3liZXJu/ZXRpY3MtcGhvdG8u/anBn"
+                  alt="Password Manager" />
+              </div>
+              <div class="year"><i class="bx bxs-calendar"></i> 2025</div>
+              <h3>Password Manager</h3>
+              <p>
+                Easily store, manage, and access your passwords—all in one
+                secure place. Prioritizing digital safety, so you can browse,
+                shop, and connect with confidence.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="btn-box">
+                <a href="https://codewithmereram.github.io/mereram/" class="btn">Live Demo</a>
+                <a href="https://github.com/codewithmereram/mereram" class="btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="projects-content" data-aos="zoom-in" data-aos-delay="300">
+            <div class="content">
+              <div class="project-img">
+                <img
+                  src="https://imgs.search.brave.com/pJTI_wP3d2PD7qX9xe4yX9g3eHz868OsZ7EnJ9-NAA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzIzLzI5LzAy/LzM2MF9GXzIyMzI5/MDI0MF92MWJGRzRV/S3VlWFB4TzhXWEpV/ZU4wUVhqMHl5aUc3/VC5qcGc"
+                  alt="E-Commerce Platform" />
+              </div>
+              <div class="year"><i class="bx bxs-calendar"></i> 2024</div>
+              <h3>E-Commerce Web Application</h3>
+              <p>
+                Amazon platform emphasizes modular microservices, serverless
+                technologies, scalable databases, and global content delivery,
+                resulting in a flexible, performant e-commerce ecosystem able
+                to support millions of users and products globally.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="btn-box">
+                <a href="https://www.amazon.com" class="btn">Live Demo</a>
+                <a href="https://github.com/codewithmereram/ecommerce" class="btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="projects-column" data-aos="fade-left">
+        <h3 class="title">
+          Additional Projects<span class="animate scroll" style="--i: 4"></span>
+        </h3>
+        <div class="projects-box">
+          <!-- Project 4 -->
+          <div class="projects-content" data-aos="zoom-in" data-aos-delay="400">
+            <div class="content">
+              <div class="project-img">
+                <img src="https://miro.medium.com/v2/resize:fit:1358/0*Bg4LQ4Z_Jb0ocVCJ" alt="Mouse Cursor" />
+              </div>
+              <div class="year"><i class="bx bxs-calendar"></i> 2024</div>
+              <h3>Mouse Cursor</h3>
+              <p>
+                A modern mouse cursor customization app built with React,
+                offering users seamless cursor creation, editing, and status
+                management with offline support.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Redux</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <div class="btn-box">
+                <a href="https://codewithmereram.github.io/Project.JS/" class="btn">Live Demo</a>
+                <a href="https://github.com/codewithmereram/Project.JS" class="btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="projects-content" data-aos="zoom-in" data-aos-delay="500">
+            <div class="content">
+              <div class="project-img">
+                <img src="https://freehtml5.co/wp-content/uploads/2017/03/02_copilot.jpg" alt="Web Dashboard" />
+              </div>
+              <div class="year"><i class="bx bxs-calendar"></i> 2023</div>
+              <h3>Admin Dashboard</h3>
+              <p>
+                A responsive admin dashboard template with charts and data
+                visualizations created using Bootstrap and Chart.js.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+              <div class="btn-box">
+                <a href="https://codewithmereram.github.io/codewithmereram_Admin-Dashboard.project/" class="btn">Live
+                  Demo</a>
+                <a href="https://github.com/codewithmereram/codewithmereram_Admin-Dashboard.project"
+                  class="btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Certifications Section -->
+  <section class="certifications" id="certifications" data-aos="fade-up">
+    <h2 class="heading">My <span>Certifications</span></h2>
+
+    <div class="section-header" data-aos="fade-up" data-aos-delay="100">
+      <h2>Professional Certifications</h2>
+      <p>Showcasing my expertise with industry-recognized credentials</p>
+    </div>
+
+    <div class="certificates-filter" data-aos="fade-up" data-aos-delay="200">
+      <button class="filter-btn active" data-filter="all">
+        All Certifications
+      </button>
+      <button class="filter-btn" data-filter="Web Development">
+        Web Development
+      </button>
+      <button class="filter-btn" data-filter="Cloud & DevOps">
+        Cloud & DevOps
+      </button>
+      <button class="filter-btn" data-filter="Programming">
+        Programming
+      </button>
+    </div>
+
+    <div class="certificates-container">
+      <!-- Certificate 1 -->
+      <div class="certificate-card" data-category="Web Development" data-aos="zoom-in" data-aos-delay="100">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-code-alt"></i>
+          <h3>Google Generative AI Studio</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Google Generative AI Studio Certification
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>Google</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: July 2025 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>certificate ID: 8573051</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Responsive Design</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://ik.imagekit.io/sguvpu53p/certtificate%20google%20cloud.pdf" class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://ik.imagekit.io/sguvpu53p/certtificate%20google%20cloud.pdf" class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="certificate-card" data-category="Cloud & DevOps" data-aos="zoom-in" data-aos-delay="200">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-cloud"></i>
+          <h3>Deloitte Technology Job</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Certified in advanced technology job skills.
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>Deloitte</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: August 2025 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>certificate ID: GCDL202403</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">Google Cloud</span>
+            <span class="skill">Cloud Computing</span>
+            <span class="skill">Infrastructure</span>
+            <span class="skill">DevOps</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_BoEiE9n3qixKWEBT4_1755417007204_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_BoEiE9n3qixKWEBT4_1755417007204_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="certificate-card" data-category="Programming" data-aos="zoom-in" data-aos-delay="300">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-code-curly"></i>
+          <h3>AWS Solutions Architecture</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Certified in AWS Solutions Architecture.
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>HackerRank</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: December 2024 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>certificate ID: HRJS202501</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">JavaScript</span>
+            <span class="skill">Algorithms</span>
+            <span class="skill">Data Structures</span>
+            <span class="skill">Problem Solving</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_BoEiE9n3qixKWEBT4_1733240533298_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_BoEiE9n3qixKWEBT4_1733240533298_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="certificate-card" data-category="Cloud & DevOps" data-aos="zoom-in" data-aos-delay="400">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-cloud"></i>
+          <h3>Intel</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Certified in advanced technology for AI.
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>Intel digital INDIA</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: Jul 2025 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>certificate ID: GCDL202403</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">Google Cloud</span>
+            <span class="skill">Cloud Computing</span>
+            <span class="skill">Infrastructure</span>
+            <span class="skill">DevOps</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://ik.imagekit.io/sguvpu53p/Prince%20Chaurasiya_AI_AWARE_CERTIFICATE.png" class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://ik.imagekit.io/sguvpu53p/Prince%20Chaurasiya_AI_AWARE_CERTIFICATE.png" class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="certificate-card" data-category="Cloud & DevOps" data-aos="zoom-in" data-aos-delay="500">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-cloud"></i>
+          <h3>Intel</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Certified in advanced technology for AI for All.
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>Intel digital INDIA</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: July 2025 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>certificate ID: GCDL202403</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">Google Cloud</span>
+            <span class="skill">Cloud Computing</span>
+            <span class="skill">Infrastructure</span>
+            <span class="skill">DevOps</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://ik.imagekit.io/sguvpu53p/WhatsApp%20Image%202025-07-07%20at%2009.25.33_2a96d024.jpg?updatedAt=1756875131227"
+            class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://ik.imagekit.io/sguvpu53p/WhatsApp%20Image%202025-07-07%20at%2009.25.33_2a96d024.jpg?updatedAt=1756875131227"
+            class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 6 - Additional for demonstration -->
+      <div class="certificate-card" data-category="Web Development" data-aos="zoom-in" data-aos-delay="600">
+        <div class="certificate-badge">VERIFIED</div>
+        <div class="certificate-header">
+          <i class="certificate-icon bx bx-code"></i>
+          <h3>accenture</h3>
+        </div>
+        <div class="certificate-body">
+          <h4 class="certificate-title">
+            Strategy Consulting Job Simulation
+          </h4>
+          <div class="certificate-info">
+            <div class="certificate-info-item">
+              <i class="bx bx-building"></i>
+              <span>Udemy</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-calendar"></i>
+              <span>Issued: August 2025 • No Expiration</span>
+            </div>
+            <div class="certificate-info-item">
+              <i class="bx bx-id-card"></i>
+              <span>Credential ID: UDACSS202406</span>
+            </div>
+          </div>
+          <div class="certificate-skills">
+            <span class="skill">CSS</span>
+            <span class="skill">Sass</span>
+            <span class="skill">Flexbox</span>
+            <span class="skill">Grid</span>
+          </div>
+        </div>
+        <div class="certificate-footer">
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/vZSN6eoncQtCPYbqz_ovyvuqqNRQKBjNxbj_BoEiE9n3qixKWEBT4_1756013386916_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-show"></i> View Certificate
+          </a>
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ovyvuqqNRQKBjNxbj/vZSN6eoncQtCPYbqz_ovyvuqqNRQKBjNxbj_BoEiE9n3qixKWEBT4_1756013386916_completion_certificate.pdf"
+            class="btn">
+            <i class="bx bx-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Certificate 7 - Additional for demonstration -->
+    <div class="view-more" data-aos="fade-up" data-aos-delay="700">
+      <button class="view-more-btn">Load More Certifications</button>
+    </div>
+    <div class="certificate-card" data-category="Web Development" data-aos="zoom-in" data-aos-delay="600">
+      <div class="certificate-badge">VERIFIED</div>
+      <div class="certificate-header">
+        <i class="certificate-icon bx bx-code"></i>
+        <h3>Electronic Arts</h3>
+      </div>
+      <div class="certificate-body">
+        <h4 class="certificate-title">
+          Software Engineering Job Simulation
+        </h4>
+        <div class="certificate-info">
+          <div class="certificate-info-item">
+            <i class="bx bx-building"></i>
+            <span>Forage</span>
+          </div>
+          <div class="certificate-info-item">
+            <i class="bx bx-calendar"></i>
+            <span>Issued: September 2025 • No Expiration</span>
+          </div>
+          <div class="certificate-info-item">
+            <i class="bx bx-id-card"></i>
+            <span>Credential ID: UDACSS202406</span>
+          </div>
+        </div>
+        <div class="certificate-skills">
+          <span class="skill">CSS</span>
+          <span class="skill">Sass</span>
+          <span class="skill">Flexbox</span>
+          <span class="skill">Grid</span>
+        </div>
+      </div>
+      <div class="certificate-footer">
+        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_BoEiE9n3qixKWEBT4_1757523273247_completion_certificate.pdf"
+          class="btn">
+          <i class="bx bx-show"></i> View Certificate
+        </a>
+        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_BoEiE9n3qixKWEBT4_1757523273247_completion_certificate.pdf"
+          class="btn">
+          <i class="bx bx-download"></i> Download PDF
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section Design -->
+  <section class="testimonials" id="testimonials" data-aos="fade-up">
+    <h2 class="heading">
+      What <span>People Say</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="testimonials-row">
+      <div class="testimonial-content" data-aos="zoom-in" data-aos-delay="100">
+        <p>
+          "Prince is an exceptional developer with a keen eye for detail. His
+          work on our web project was outstanding!"
+        </p>
+        <h4>- Prof.Shaib Usmani, CEO at TechCorp</h4>
+      </div>
+      <div class="testimonial-content" data-aos="zoom-in" data-aos-delay="200">
+        <p>
+          "Working with Prince was a pleasure. He delivered high-quality code
+          on time and exceeded expectations."
+        </p>
+        <h4>- Jane Smith, Project Manager at Innovate Ltd.</h4>
+      </div>
+      <div class="testimonial-content" data-aos="zoom-in" data-aos-delay="300">
+        <p>
+          "Prince's expertise in React and Node.js helped us build a scalable
+          application. Highly recommended!"
+        </p>
+        <h4>- Alex Johnson, CTO at StartupX</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section Design -->
+  <section class="blog" id="blog" data-aos="fade-up">
+    <h2 class="heading">My <span>Blog</span></h2>
+    <div class="blog-row">
+      <div class="blog-post" data-aos="zoom-in" data-aos-delay="100">
+        <h3>The Future of Web Development in 2025</h3>
+        <p>
+          Exploring emerging trends like AI integration and progressive web
+          apps. Published on August 20, 2025.
+        </p>
+        <a href="https://www.geeksforgeeks.org/future-of-web-development/" class="btn">Read More</a>
+      </div>
+      <div class="blog-post" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Mastering React Hooks for Better State Management</h3>
+        <p>
+          A deep dive into useState, useEffect, and custom hooks. Published on
+          July 15, 2025.
+        </p>
+        <a href="https://react.dev/learn/managing-state" class="btn">Read More</a>
+      </div>
+      <div class="blog-post" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Building Secure Password Managers with JavaScript</h3>
+        <p>
+          Best practices for encryption and user data protection. Published on
+          June 10, 2025.
+        </p>
+        <a href="https://www.javascripttutorial.net/" class="btn">Read More</a>
+      </div>
+      <!-- New Blog Post 1 -->
+      <div class="blog-post" data-aos="zoom-in" data-aos-delay="400">
+        <h3>Introduction to Node.js for Scalable Backend</h3>
+        <p>
+          Learn how to build fast and scalable server-side applications with
+          Node.js. Published on September 5, 2025.
+        </p>
+        <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" class="btn">Read More</a>
+      </div>
+      <!-- New Blog Post 2 -->
+      <div class="blog-post" data-aos="zoom-in" data-aos-delay="500">
+        <h3>CSS Grid vs Flexbox: When to Use What</h3>
+        <p>
+          A comparison of CSS Grid and Flexbox for modern web layouts.
+          Published on September 10, 2025.
+        </p>
+        <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+  <!-- Social Media Section Design -->
+  <section class="social-media" id="social-media" data-aos="fade-up">
+    <h2 class="heading">
+      My <span>Social Media</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <div class="social-media-row">
+      <!-- Facebook Post (Placeholder - No public posts found) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="100">
+        <div class="post-header">
+          <i class="bx bxl-facebook"></i>
+          <h3>Facebook - MrPrince Chaurasiya</h3>
+          <span class="post-date">July 12, 2025</span>
+        </div>
+        <p>
+          "Ek nayi soch, ek naya safar — haath mein samvidhan, dil mein desh
+          ka pyaar. Bharat ke naujawanon ke saath kadam se kadam milakar, ek
+          mazboot aur insaaf bhare Bharat ki ore yatra. Tirange ke saaye mein,
+          awaam ki awaaz ban kar nikal pada ek naya udaan!"INDIA
+        </p>
+        <div class="post-image">
+          <img src="https://ik.imagekit.io/sguvpu53p/IMG_20250703_231923.jpg" alt="Facebook Post Image" />
+        </div>
+        <a href="https://www.facebook.com/people/MrPrince-Chaurasiya/61555385261820" class="btn" target="_blank">View on
+          Facebook</a>
+      </div>
+      <!-- LinkedIn Post (Placeholder - No public posts found; used your known certification) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="200">
+        <div class="post-header">
+          <i class="bx bxl-linkedin"></i>
+          <h3>LinkedIn - Prince Chaurasiya</h3>
+          <span class="post-date">May 10, 2023</span>
+        </div>
+        <p>
+          "Cloud Technical Series AI Agents Edition AI Agents are the next
+          frontier in the accelerating AI transformation." #GoogleCloud
+        </p>
+        <div class="post-image">
+          <img
+            src="https://cloudonair.withgoogle.com/api/assets?path=/gs/gweb-gc-gather-production.appspot.com/files/ABgVH89O6tUEX90bxNjF5eysQZbaJH2zE0CZjwQitjBNHdFjdywb9-ksxxJpnbFrzv_nH1UZuMdYJx0.gwaGPdRUTVFob6M7"
+            alt="LinkedIn Post Image" />
+        </div>
+        <a href="https://www.linkedin.com/in/prince-chaurasiya-07625a323" class="btn" target="_blank">View on
+          LinkedIn</a>
+      </div>
+      <!-- X Post (Real Recent Post with Image) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="300">
+        <div class="post-header">
+          <i class="bx bxl-twitter"></i>
+          <h3>X - @princeC9091</h3>
+          <span class="post-date">April 10, 2025</span>
+        </div>
+        <p>
+          "Check Be happy with nothing and you will be happy with
+          everything....😊🙂 @PrinceC40606713 #Motivation #Success #Happiness
+        </p>
+        <div class="post-image">
+          <img src="https://pbs.twimg.com/media/GXC7XVmXAAAdKMv?format=jpg&name=small" alt="X Post Image" />
+        </div>
+        <a href="https://x.com/princeC9091" class="btn" target="_blank">View on X</a>
+      </div>
+      <!-- Instagram Post (Placeholder based on profile) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="400">
+        <div class="post-header">
+          <i class="bx bxl-instagram"></i>
+          <h3>Instagram - @mr.princechaurasiyaofficial</h3>
+          <span class="post-date">August 15, 2025</span>
+        </div>
+        <p>
+          Welcome to my Instagram profile! I like only single life. Check out
+          my latest photos and stories.
+        </p>
+        <div class="post-image">
+          <img src="https://ik.imagekit.io/sguvpu53p/4a6b4382-1d67-49ca-9302-6663a80bb29f.png"
+            alt="Instagram Post Image" />
+        </div>
+        <!-- No specific image found, so no post-image div added -->
+        <a href="https://www.instagram.com/mr.princechaurasiyaofficial" class="btn" target="_blank">View on
+          Instagram</a>
+      </div>
+      <!-- GitHub "Post" (Using a recent repository as example) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="500">
+        <div class="post-header">
+          <i class="bx bxl-github"></i>
+          <h3>GitHub - codewithmereram</h3>
+          <span class="post-date">August 05, 2025</span>
+        </div>
+        <p>
+          Check out my latest repository: mereram - A password manager project
+          built with HTML, CSS, JavaScript, and Firebase.
+        </p>
+        <div class="post-image">
+          <img src="https://opengraph.githubassets.com/1/codewithmereram/mereram" alt="GitHub Repo Image" />
+        </div>
+        <a href="https://github.com/codewithmereram" class="btn" target="_blank">View on GitHub</a>
+      </div>
+      <!-- X Post (Real Recent Post with Image) -->
+      <div class="social-media-post" data-aos="zoom-in" data-aos-delay="600">
+        <div class="post-header">
+          <i class="bx bxl-twitter"></i>
+          <h3>X - @princeC9091</h3>
+          <span class="post-date">May 20, 2025</span>
+        </div>
+        <p>
+          ‼𝙈𝙚𝙧𝙚𝙧𝙖𝙢‼ अतुलितबलधामं हेमशैलाभदेहं,दनुजवनकृशानुं
+          ज्ञानिनामग्रगण्यम्‌। सकलगुणनिधानं
+          वानराणामधीशं,रघुपतिप्रियभक्तं वातजातं नमामि || 🙏jai shree ram
+          everyone🚩🚩🚩
+        </p>
+        <div class="post-image">
+          <img src="https://pbs.twimg.com/media/GvvbqevXAAEt_JH?format=jpg&name=900x900" alt="X Post Image" />
+        </div>
+        <a href="https://x.com/princeC9091" class="btn" target="_blank">View on X</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback Section Design -->
+  <section class="feedback" id="feedback" data-aos="fade-up">
+    <h2 class="heading">Your <span>Feedback</span></h2>
+    <div class="feedback-container" data-aos="zoom-in" data-aos-delay="100">
+      <div class="feedback-form">
+        <h3>Share Your Thoughts</h3>
+        <p>I'd love to hear your feedback about my portfolio or my work.</p>
+        <form id="feedbackForm">
+          <div class="input-box">
+            <div class="input-field" data-aos="fade-right" data-aos-delay="200">
+              <input type="text" placeholder="Your Name" id="feedbackName" required />
+              <span class="focus"></span>
+            </div>
+            <div class="input-field" data-aos="fade-left" data-aos-delay="200">
+              <input type="email" placeholder="Your Email" id="feedbackEmail" required />
+              <span class="focus"></span>
+            </div>
+          </div>
+          <div class="textarea-field" data-aos="fade-up" data-aos-delay="300">
+            <textarea id="feedbackMessage" cols="30" rows="6" placeholder="Your valuable feedback..."
+              required></textarea>
+            <span class="focus"></span>
+          </div>
+          <div class="rating-box" data-aos="fade-up" data-aos-delay="400">
+            <p>How would you rate my portfolio?</p>
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5"><i class="bx bxs-star"></i></label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4"><i class="bx bxs-star"></i></label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3"><i class="bx bxs-star"></i></label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2"><i class="bx bxs-star"></i></label>
+              <input type="radio" id="star1" name="rating" value="1" required />
+              <label for="star1"><i class="bx bxs-star"></i></label>
+            </div>
+          </div>
+          <div class="btn-box btns" data-aos="fade-up" data-aos-delay="500">
+            <button type="submit" class="btn">Submit Feedback</button>
+          </div>
+        </form>
+      </div>
+      <div class="feedback-thankyou">
+        <i class="bx bx-check-circle"></i>
+        <h3>Thank You for Your Feedback!</h3>
+        <p>
+          I appreciate you taking the time to share your thoughts with me.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section Design -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2 class="heading">
+      Contact <span>Me</span><span class="animate scroll" style="--i: 1"></span>
+    </h2>
+    <form action="#">
+      <div class="input-box">
+        <div class="input-field" data-aos="fade-right" data-aos-delay="100">
+          <input type="text" placeholder="Your Full Name" required />
+          <span class="focus"></span>
+        </div>
+        <div class="input-field" data-aos="fade-left" data-aos-delay="100">
+          <input type="email" placeholder="Your Email Address" required />
+          <span class="focus"></span>
+        </div>
+        <span class="animate scroll" style="--i: 3"></span>
+      </div>
+      <div class="input-box">
+        <div class="input-field" data-aos="fade-right" data-aos-delay="200">
+          <input type="tel" placeholder="Your Mobile Number" required />
+          <span class="focus"></span>
+        </div>
+        <div class="input-field" data-aos="fade-left" data-aos-delay="200">
+          <input type="text" placeholder="Email Subject" required />
+          <span class="focus"></span>
+        </div>
+        <span class="animate scroll" style="--i: 5"></span>
+      </div>
+      <div class="textarea-field" data-aos="fade-up" data-aos-delay="300">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <span class="focus"></span>
+        <span class="animate scroll" style="--i: 7"></span>
+      </div>
+      <div class="btn-box btns" data-aos="fade-up" data-aos-delay="400">
+        <button type="submit" class="btn">Submit</button>
+        <span class="animate scroll" style="--i: 9"></span>
+      </div>
+    </form>
+  </section>
+
+  <!-- Login/Signup Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="login-container">
+        <div class="login-form-container sign-in">
+          <form>
+            <h2 class="login-form-heading">Sign In</h2>
+            <div class="login-social-icons">
+              <a href="https://google.com/login/oauth/authorize"><i class="fab fa-google"></i></a>
+              <a href="https://facebook.com/login/oauth/authorize"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://github.com/login/oauth/authorize"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/login/oauth/authorize"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="login-input-group">
+              <input type="text" required />
+              <label><i class="fas fa-user"></i> Username</label>
+              <span class="icon"><i class="fas fa-user"></i></span>
+            </div>
+            <div class="login-input-group">
+              <input type="password" required />
+              <label><i class="fas fa-lock"></i> Password</label>
+              <span class="icon"><i class="fas fa-lock"></i></span>
+            </div>
+            <div class="login-remember-forgot">
+              <label><input type="checkbox" /> Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-btn">Sign In</button>
+            <div class="login-signup-link">
+              <p>
+                Don't have an account?
+                <a href="#" class="signup-btn-link">Sign Up</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="login-form-container sign-up">
+          <form>
+            <h2 class="login-form-heading">Sign Up</h2>
+            <div class="login-social-icons">
+              <a href="https://google.com/login/oauth/authorize"><i class="fab fa-google"></i></a>
+              <a href="https://facebook.com/login/oauth/authorize"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://github.com/login/oauth/authorize"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/login/oauth/authorize"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="login-input-group">
+              <input type="text" required />
+              <label><i class="fas fa-user"></i> Username</label>
+              <span class="icon"><i class="fas fa-user"></i></span>
+            </div>
+            <div class="login-input-group">
+              <input type="email" required />
+              <label><i class="fas fa-envelope"></i> Email</label>
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+            </div>
+            <div class="login-input-group">
+              <input type="password" required />
+              <label><i class="fas fa-lock"></i> Password</label>
+              <span class="icon"><i class="fas fa-lock"></i></span>
+            </div>
+            <div class="login-input-group">
+              <input type="password" required />
+              <label><i class="fas fa-lock"></i> Confirm Password</label>
+              <span class="icon"><i class="fas fa-lock"></i></span>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+            <div class="login-signup-link">
+              <p>
+                Already have an account?
+                <a href="#" class="signin-btn-link">Sign In</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="login-toggle-btn"></div>
+        <div class="login-particles-container" id="login-particles"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Chatbot Float Button -->
+  <div class="chatbot-float">
+    <button id="chatbotBtn">
+      <i class="bx bx-message-square-dots"></i>
+    </button>
+  </div>
+
+  <!-- Chat Popup -->
+  <div id="chatPopup" class="chat-popup">
+    <div class="chat-popup-header">
+      <h3>Quick Contact</h3>
+      <button id="closeChatBtn">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+    <div class="chat-popup-body">
+      <p>Choose your preferred way to contact me:</p>
+      <div>
+        <a href="https://wa.me/7860414376?text=Hello%20Prince,%20I%20have%20a%20question%20about%20your%20portfolio"
+          target="_blank" class="chat-option">
+          <div class="chat-option-icon" style="background: #25D366;">
+            <i class="bx bxl-whatsapp"></i>
+          </div>
+          <div class="chat-option-text">
+            <div>WhatsApp</div>
+            <div>Chat on WhatsApp</div>
+          </div>
+        </a>
+        <a href="https://www.snapchat.com/add/codewithmereram" target="_blank" class="chat-option">
+          <div class="chat-option-icon" style="background: #FFFC00;">
+            <i class="bx bxl-snapchat"></i>
+          </div>
+          <div class="chat-option-text">
+            <div>Snapchat</div>
+            <div>Message on bxl-snapchat</div>
+          </div>
+        </a>
+        <a href="https://t.me/mrprincechaurasiya" target="_blank" class="chat-option">
+          <div class="chat-option-icon" style="background: #0088cc;">
+            <i class="bx bxl-telegram"></i>
+          </div>
+          <div class="chat-option-text">
+            <div>Telegram</div>
+            <div>Message on Telegram</div>
+          </div>
+        </a>
+        <a href="mailto:mr.princechaurasiyaofficial@gmail.com" class="chat-option">
+          <div class="chat-option-icon" style="background: #6f42c1;">
+            <i class="bx bx-envelope"></i>
+          </div>
+          <div class="chat-option-text">
+            <div>Email</div>
+            <div>Send an email</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Design -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>&copy; 2025 Mr.Prince Chaurasiya All rights reserved.</p>
+      <!-- <p>Portfolio by Prince Chaurasiya &copy; 2025</p> -->
+      <span class="animate scroll" style="--i: 1"></span>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+      <span class="animate scroll" style="--i: 3"></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize AOS library for scroll animations
+    function initAnimations() {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // Animate skill bars when in view
+      const skillsBox = document.querySelector(".skills-box");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      if (skillsBox) {
+        observer.observe(skillsBox);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const loadingOverlay = document.getElementById("loading-overlay");
+      const progressBar = document.getElementById("progress-bar");
+      const loadingPercentage = document.getElementById("loading-percentage");
+      const contentElements = document.querySelectorAll(".content");
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 20;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+
+          // Complete loading
+          progressBar.style.width = "100%";
+          loadingPercentage.textContent = "100%";
+
+          // Hide loading overlay and show content after a short delay
+          setTimeout(() => {
+            loadingOverlay.style.opacity = "0";
+            setTimeout(() => {
+              loadingOverlay.style.display = "none";
+              contentElements.forEach((el) => {
+                el.classList.add("show-content");
+              });
+            }, 500);
+          }, 500);
+        } else {
+          progressBar.style.width = progress + "%";
+          loadingPercentage.textContent = Math.round(progress) + "%";
+        }
+      }, 300);
+    });
+  </script>
+
+  <script>
+    // Randomly show CAPTCHA (50% chance)
+    if (Math.random() < 0.5) {
+      document.getElementById("captcha-overlay").classList.add("active");
+    } else {
+      document.getElementById("captcha-overlay").style.display = "none";
+      document.getElementById("portfolio-content").style.display = "block";
+      document.getElementById("portfolio-content").classList.add("active");
+    }
+
+    function verifyHuman() {
+      // Disable checkbox
+      document.getElementById("captcha-checkbox").disabled = true;
+      // Show loader
+      document.getElementById("captcha-loader").classList.add("active");
+      // Create particle burst
+      const captcha = document.querySelector(".captcha");
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.width = "8px";
+        particle.style.height = "8px";
+        particle.style.left = "50%";
+        particle.style.top = "50%";
+        particle.style.setProperty("--x", `${Math.random() * 200 - 100}px`);
+        particle.style.setProperty("--y", `${Math.random() * 200 - 100}px`);
+        captcha.appendChild(particle);
+        setTimeout(() => particle.remove(), 800);
+      }
+      // Hide CAPTCHA and show content
+      setTimeout(() => {
+        document.getElementById("captcha-overlay").style.opacity = "0";
+        setTimeout(() => {
+          document.getElementById("captcha-overlay").style.display = "none";
+          document.getElementById("portfolio-content").style.display =
+            "block";
+          document
+            .getElementById("portfolio-content")
+            .classList.add("active");
+        }, 800);
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>

@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
- // Chatbot functionality
+// Chatbot functionality
 document.addEventListener('DOMContentLoaded', () => {
   const chatbotBtn = document.getElementById('chatbotBtn');
   const chatPopup = document.getElementById('chatPopup');
@@ -618,5 +618,87 @@ document.addEventListener('DOMContentLoaded', () => {
     ) {
       chatPopup.classList.remove('show');
     }
+  });
+});
+
+// Custom Mouse Cursor
+document.addEventListener('DOMContentLoaded', function () {
+  const cursor = document.querySelector('.cursor');
+  const follower = document.querySelector('.cursor-follower');
+
+  // Track mouse position
+  let mouseX = 0;
+  let mouseY = 0;
+  let followerX = 0;
+  let followerY = 0;
+
+  // Update cursor position
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Set main cursor position immediately
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  // Animate follower with smooth trailing effect
+  function animateFollower() {
+    // Calculate distance between cursor and follower
+    const distX = mouseX - followerX;
+    const distY = mouseY - followerY;
+
+    // Apply easing for smooth movement
+    followerX += distX / 8;
+    followerY += distY / 8;
+
+    // Update follower position
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+
+    // Continue animation
+    requestAnimationFrame(animateFollower);
+  }
+
+  // Start animation
+  animateFollower();
+
+  // Hover effects on interactive elements
+  const hoverElements = document.querySelectorAll('a, button, .btn, .navbar a, .logo, .home-sci a, input, textarea, select');
+
+  hoverElements.forEach(element => {
+    element.addEventListener('mouseenter', function () {
+      cursor.classList.add('hover');
+      follower.classList.add('hover');
+    });
+
+    element.addEventListener('mouseleave', function () {
+      cursor.classList.remove('hover');
+      follower.classList.remove('hover');
+    });
+  });
+
+  // Click effect
+  document.addEventListener('mousedown', function () {
+    cursor.classList.add('click');
+    follower.classList.add('click');
+  });
+
+  document.addEventListener('mouseup', function () {
+    cursor.classList.remove('click');
+    follower.classList.remove('click');
+  });
+
+  // Hide cursor when leaving window
+  document.addEventListener('mouseout', function (e) {
+    if (e.relatedTarget === null) {
+      cursor.style.opacity = '0';
+      follower.style.opacity = '0';
+    }
+  });
+
+  document.addEventListener('mouseover', function () {
+    cursor.style.opacity = '1';
+    follower.style.opacity = '1';
   });
 });

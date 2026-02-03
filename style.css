@@ -2638,117 +2638,153 @@
  }
  */
 
-
- /* CAPTCHA Overlay */
- .captcha-overlay {
+ /* 1. Main Overlay */
+ #captcha-overlay {
      position: fixed;
      top: 0;
      left: 0;
      width: 100%;
      height: 100%;
-     background: var(--bg-color);
-     display: none;
+     background: #081b29;
+     /* Dark Blue Background */
+     z-index: 10000;
+     display: flex;
      justify-content: center;
      align-items: center;
-     z-index: 1000;
-     transition: opacity 0.8s ease;
+
+     /* MOUSE CURSOR FIX - Overlay pe normal arrow dikhega */
+     cursor: default !important;
  }
 
- .captcha-overlay.active {
+ /* 2. Captcha Box */
+ .captcha-box {
+     background: #f9f9f9;
+     border: 1px solid #d3d3d3;
+     border-radius: 3px;
+     width: 300px;
+     height: 74px;
      display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 12px;
+     box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+     user-select: none;
  }
 
- .captcha {
-     background: var(--second-bg-color);
-     border-radius: 15px;
-     padding: 30px;
-     width: 90%;
-     max-width: 340px;
-     text-align: center;
-     box-shadow: 0 0 25px rgb(16, 219, 255);
-     animation: zoomIn 0.6s ease;
+ /* 3. Checkbox Area */
+ .captcha-left {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     cursor: pointer !important;
+     /* Click hand icon */
+ }
+
+ /* Box Design (Initial Empty State) */
+ .checkbox-window {
+     width: 24px;
+     height: 24px;
+     background: #fff;
+     border: 2px solid #c1c1c1;
+     border-radius: 2px;
      position: relative;
- }
-
- .captcha h3 {
-     font-size: 1.5em;
-     color: var(--text-color);
-     margin-bottom: 20px;
-     text-shadow: 0 0 10px var(--main-color);
-     animation: glowText 2s ease-in-out infinite;
- }
-
- .captcha-checkbox {
      display: flex;
-     align-items: center;
      justify-content: center;
-     gap: 15px;
-     margin: 20px 0;
- }
-
- .captcha-checkbox input[type="checkbox"] {
-     display: none;
- }
-
- .checkmark {
-     width: 35px;
-     height: 35px;
-     background: var(--second-bg-color);
-     border: 3px solid var(--main-color);
-     border-radius: 10px;
-     display: flex;
      align-items: center;
-     justify-content: center;
-     cursor: pointer;
-     position: relative;
-     transition: all 0.3s ease;
-     box-shadow: 0 0 15px rgb(80, 80, 80);
+     transition: all 0.2s;
  }
 
- .checkmark:hover {
-     box-shadow: 0 0 20px var(--main-color);
-     transform: scale(1.05);
+ .captcha-left:hover .checkbox-window {
+     border: 2px solid #b2b2b2;
  }
 
- .captcha-checkbox input[type="checkbox"]:checked+.checkmark {
-     background: var(--main-color);
-     animation: glowPulse 0.5s ease;
- }
-
- .checkmark::after {
-     content: '✔';
-     color: var(--text-color);
-     font-size: 1.4em;
-     opacity: 0;
-     transition: opacity 0.3s ease, transform 0.3s ease;
- }
-
- .captcha-checkbox input[type="checkbox"]:checked+.checkmark::after {
-     opacity: 1;
-     transform: scale(1);
-     animation: bounce 0.4s ease;
- }
-
- .captcha-text {
-     color: var(--text-color);
-     font-size: 1.2em;
-     font-weight: 600;
-     text-shadow: 0 0 5px var(--main-color);
- }
-
- .captcha-loader {
-     display: none;
-     width: 35px;
-     height: 35px;
-     border: 5px solid var(--main-color);
-     border-top: 5px solid transparent;
+ /* 4. Hidden Elements (Spinner & Checkmark) */
+ .spinner {
+     width: 28px;
+     height: 28px;
+     border: 3px solid transparent;
+     border-top: 3px solid #4a90e2;
+     /* Google Blue */
+     border-right: 3px solid #4a90e2;
      border-radius: 50%;
-     margin: 15px auto;
+     position: absolute;
+     top: -4px;
+     left: -4px;
      animation: spin 1s linear infinite;
+     display: none;
+     /* Pehle nahi dikhega */
  }
 
- .captcha-loader.active {
+ .check-icon {
+     color: #009688;
+     /* Google Green */
+     font-size: 28px;
+     display: none;
+     /* Pehle nahi dikhega */
+     transform: scale(0);
+     /* Animation ke liye */
+ }
+
+ /* Jab JS class add karega tab ye animation chalegi */
+ .check-icon.show {
      display: block;
+     animation: popIn 0.3s ease forwards;
+ }
+
+ /* Text & Logo Styles */
+ .captcha-text {
+     font-family: 'Roboto', sans-serif;
+     font-size: 14px;
+     color: #282828;
+     font-weight: 500;
+ }
+
+ .captcha-right {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .captcha-logo-img {
+     width: 32px;
+     opacity: 0.6;
+ }
+
+ .captcha-terms {
+     font-size: 10px;
+     color: #555;
+     text-align: center;
+     line-height: 1.2;
+ }
+
+ /* Animations */
+ @keyframes spin {
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ @keyframes popIn {
+     0% {
+         transform: scale(0);
+         opacity: 0;
+     }
+
+     80% {
+         transform: scale(1.2);
+         opacity: 1;
+     }
+
+     100% {
+         transform: scale(1);
+         opacity: 1;
+     }
+ }
+
+ /* Lock Body Scroll */
+ body.locked {
+     overflow: hidden;
  }
 
  /* Particle Effect */
@@ -3330,4 +3366,166 @@
  /* Show default cursor inside modal */
  .modal * {
      cursor: auto !important;
+ }
+
+ /* --- 1. Desktop Layout --- */
+ .home {
+     display: flex;
+     justify-content: space-between;
+     /* Text left, Image right */
+     align-items: center;
+     padding: 0 8%;
+     min-height: 100vh;
+ }
+
+ .home-content {
+     max-width: 55%;
+     /* Text ka area */
+     z-index: 10;
+ }
+
+ /* --- 2. Image Container (The Magic Part) --- */
+ .home-image {
+     position: relative;
+     width: 40%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .profession-container {
+     position: relative;
+     width: 400px;
+     height: 400px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /* Photo Styling (Perfect Circle) */
+ .main-img {
+     position: absolute;
+     width: 280px;
+     /* Photo ka size */
+     height: 280px;
+     background: #fff;
+     /* Photo ke piche safed background */
+     border-radius: 50%;
+     overflow: hidden;
+     z-index: 2;
+     border: 5px solid transparent;
+     /* Border adjust kar sakte ho */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .main-img img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /* Chehra kharab nahi hoga */
+ }
+
+ /* Orbit Ring (Dashed Line) */
+ .profession-box {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     border: 2px dashed #00abf0;
+     /* Theme Color ki dashed line */
+     opacity: 0.6;
+     animation: rotate 10s linear infinite;
+     /* Ghumne wala animation */
+     z-index: 1;
+ }
+
+ /* Colored Dots on the Ring */
+ .profession-orbit span {
+     position: absolute;
+     border-radius: 50%;
+ }
+
+ /* Blue Dot */
+ .dot-1 {
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 15px;
+     height: 15px;
+     background: #00abf0;
+     box-shadow: 0 0 10px #00abf0;
+ }
+
+ /* Orange/Red Dot */
+ .dot-2 {
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 15px;
+     height: 15px;
+     background: #ff5733;
+     /* Color change kar sakte ho */
+     box-shadow: 0 0 10px #ff5733;
+ }
+
+ /* Background soft glow */
+ .circle-bg {
+     position: absolute;
+     width: 320px;
+     height: 320px;
+     background: #00abf0;
+     border-radius: 50%;
+     opacity: 0.1;
+     /* Halka sa background color */
+     z-index: 0;
+ }
+
+ /* Animation Keyframes (Ring ghumane ke liye) */
+ @keyframes rotate {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ /* --- 3. MOBILE & TABLET LOGIC (Imp: Ye photo chupayega) --- */
+ @media (max-width: 991px) {
+     .home {
+         flex-direction: column;
+         /* Upar Niche */
+         padding-top: 5rem;
+     }
+
+     .home-content {
+         max-width: 100%;
+         /* Mobile pe text pura area lega */
+     }
+
+     /* Important: Hide Image on Mobile/Tablet */
+     .home-image {
+         display: none !important;
+     }
+ }
+
+ #particles-js {
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     /* Puts it behind your content */
+     background-color: transparent;
+ }
+
+ /* Fix for Typed Text to make it pop */
+ .multiple-text {
+     color: #00abf0;
+     font-weight: 700;
  }

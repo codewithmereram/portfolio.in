@@ -702,3 +702,45 @@ document.addEventListener('DOMContentLoaded', function () {
     follower.style.opacity = '1';
   });
 });
+// Page load hote hi scroll lock
+document.body.classList.add('locked');
+
+function verifyUser() {
+  const windowBox = document.getElementById('c-window');
+  const spinner = document.getElementById('c-spinner');
+  const check = document.getElementById('c-check');
+  const overlay = document.getElementById('captcha-overlay');
+
+  // 1. Agar pehle se click hai to kuch mat karo
+  if (windowBox.classList.contains('active')) return;
+  windowBox.classList.add('active');
+
+  // 2. Click hote hi: Border Hatao -> Spinner Dikhao
+  windowBox.style.border = 'none';
+  spinner.style.display = 'block';
+
+  // 3. 1.5 Second Wait (Processing...)
+  setTimeout(() => {
+    // Spinner band karo
+    spinner.style.display = 'none';
+
+    // CHECKMARK DIKHAO (Animation ke saath)
+    check.classList.add('show');
+
+    // 4. Checkmark dikhne ke thodi der baad Overlay hatao
+    setTimeout(() => {
+      overlay.style.transition = "opacity 0.6s ease";
+      overlay.style.opacity = "0";
+
+      // Overlay DOM se hatao aur Scroll unlock karo
+      setTimeout(() => {
+        overlay.style.display = "none";
+        document.body.classList.remove('locked');
+
+        // Agar AOS/Animations initialize karna hai to yahan call karo
+        if (typeof initAnimations === "function") initAnimations();
+      }, 600);
+
+    }, 800); // 0.8s Checkmark dikhega user ko
+  }, 1500); // 1.5s Loading time
+}

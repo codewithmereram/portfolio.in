@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Prince Chaurasiya's Portfolio - Software Developer specializing in Web Development, with skills in HTML, CSS, JavaScript, React, Node.js, and more. Explore my projects, education, and experience." />
+    content="Prince Chaurasiya's Portfolio - Full-Stack Developer specializing in Web Development, with skills in HTML, CSS, JavaScript, React, Node.js, and more. Explore my projects, education, and experience." />
   <meta name="keywords"
-    content="Prince Chaurasiya, Software Developer, Web Developer, Portfolio, React, Node.js, JavaScript, HTML, CSS" />
+    content="Prince Chaurasiya, Full-Stack Developer, Web Developer, Portfolio, React, Node.js, JavaScript, HTML, CSS" />
   <meta name="author" content="Prince Chaurasiya" />
   <meta property="og:title" content="Prince Chaurasiya's Portfolio" />
   <meta property="og:description"
-    content="Dedicated Software Developer passionate about building innovative web solutions." />
+    content="Dedicated Full-Stack Developer passionate about building innovative web solutions." />
   <meta property="og:image" content="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" />
   <meta property="og:url" content="https://your-portfolio-url.com" />
   <!-- Replace with actual URL -->
@@ -26,6 +26,9 @@
   <!-- Add AOS for modern animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Add these inside <head> -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -35,19 +38,30 @@
   <!-- Custom Cursor Elements -->
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
-  <!-- CAPTCHA Overlay -->
-  <div class="captcha-overlay" id="captcha-overlay">
-    <div class="captcha">
-      <h3>Verify You're Human</h3>
-      <div class="captcha-checkbox">
-        <label>
-          <input type="checkbox" id="captcha-checkbox" onclick="verifyHuman()" />
-          <span class="checkmark"></span>
-        </label>
+  <div id="captcha-overlay">
+    <div class="captcha-box">
+
+      <!-- CLICKABLE AREA -->
+      <div class="captcha-left" onclick="verifyUser()">
+        <div class="checkbox-window" id="c-window">
+          <!-- Spinner (Processing) -->
+          <div class="spinner" id="c-spinner"></div>
+          <!-- Checkmark (Success) -->
+          <i class="bx bx-check check-icon" id="c-check"></i>
+        </div>
         <span class="captcha-text">I'm not a robot</span>
       </div>
-      <div class="captcha-loader" id="captcha-loader"></div>
+
+      <!-- LOGO AREA -->
+      <div class="captcha-right">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/200px-RecaptchaLogo.svg.png"
+          alt="logo" class="captcha-logo-img">
+        <div class="captcha-terms">reCAPTCHA<br>Privacy - Terms</div>
+      </div>
     </div>
+  </div>
+  </div>
   </div>
 
   <div id="particles-js"></div>
@@ -107,13 +121,9 @@
         width: 0;
         z-index: 1000;
       "></div>
-
-  <!-- Home Section Design -->
   <section class="home show-animate" id="home">
     <div class="home-content">
-      <h1>
-        Hi, I'm <span>Prince Chaurasiya</span><span class="animate" style="--i: 2"></span>
-      </h1>
+      <h1>Hi, I'm <span>Prince Chaurasiya</span><span class="animate" style="--i: 2"></span></h1>
       <div class="text-animate">
         <h3>Web Developer</h3>
         <h3>Full Stack Developer</h3>
@@ -129,22 +139,40 @@
       <div class="btn-box">
         <a href="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" class="btn">Hire Me</a>
         <a href="#contact" class="btn">Let's Talk</a>
-        <a href="@" class="btn">Download
+        <a href="https://ik.imagekit.io/sguvpu53p/My%20Resume.pdf?updatedAt=1770046609609" class="btn">Download
           Resume</a>
         <span class="animate" style="--i: 5"></span>
       </div>
+      <div class="home-sci">
+        <a href="https://www.linkedin.com/in/prince-chaurasiya-07625a323"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/codewithmereram"><i class="bx bxl-github"></i></a>
+        <a href="https://x.com/princeC9091"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/people/MrPrince-Chaurasiya/61555385261820"><i class="bx bxl-facebook"></i></a>
+        <span class="animate" style="--i: 6"></span>
+      </div>
     </div>
-    <div class="home-sci">
-      <a href="https://www.linkedin.com/in/prince-chaurasiya-07625a323"><i class="bx bxl-linkedin"></i></a>
-      <a href="https://github.com/codewithmereram"><i class="bx bxl-github"></i></a>
-      <a href="https://x.com/princeC9091"><i class="bx bxl-twitter"></i></a>
-      <a href="https://www.facebook.com/people/MrPrince-Chaurasiya/61555385261820"><i class="bx bxl-facebook"></i></a>
-      <span class="animate" style="--i: 6"></span>
+
+    <!-- Professional Orbit Image Section -->
+    <div class="home-image">
+      <div class="profession-container">
+        <!-- Yeh Ring ghumegi -->
+        <div class="profession-box">
+          <div class="profession-orbit">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+          </div>
+        </div>
+
+        <!-- Yeh tumhari photo beech me rahegi -->
+        <div class="main-img">
+          <img src="https://ik.imagekit.io/sguvpu53p/Photo%20dp.jpg" alt="Prince Chaurasiya">
+        </div>
+
+        <!-- Background glow circle -->
+        <div class="circle-bg"></div>
+      </div>
+      <span class="animate" style="--i: 7"></span>
     </div>
-    <!-- <div class="home-image">
-        <img src="#" alt="Prince Chaurasiya">
-      </div> -->
-    <span class="home-image" style="--i: 7"></span>
   </section>
 
   <!-- About Section Design -->
@@ -209,7 +237,7 @@
           <div class="education-content" data-aos="fade-up" data-aos-delay="300">
             <div class="content">
               <div class="year">
-                <i class="bx bxs-calendar"></i> 2024 - Present
+                <i class="bx bxs-calendar"></i> 2024 - 2028
               </div>
               <h3>
                 BCA - Maharishi University of Information Technology, Lucknow
@@ -245,7 +273,7 @@
               <div class="year">
                 <i class="bx bxs-calendar"></i> 2024 - 2025
               </div>
-              <h3>Software Developer - Appinventiv</h3>
+              <h3>Full-Stack Developer - Appinventiv</h3>
               <p>
                 Built scalable mobile and web applications using modern tech
                 stacks. Integrated APIs and third-party services to enhance
@@ -400,8 +428,7 @@
           <div class="projects-content" data-aos="zoom-in" data-aos-delay="200">
             <div class="content">
               <div class="project-img">
-                <img
-                  src="https://ghananewspage.com/wp-content/uploads/2024/11/Cybersecurity-Secrets-1024x683.webp"
+                <img src="https://ghananewspage.com/wp-content/uploads/2024/11/Cybersecurity-Secrets-1024x683.webp"
                   alt="Password Manager" />
               </div>
               <div class="year"><i class="bx bxs-calendar"></i> 2025</div>
@@ -446,7 +473,7 @@
                 <span class="tech-tag">MongoDB</span>
               </div>
               <div class="btn-box">
-                <a href="https://www.amazon.com" class="btn">Live Demo</a>
+                <a href="https://mererame-commerce.netlify.app/" class="btn">Live Demo</a>
                 <a href="https://github.com/codewithmereram/ecommerce" class="btn">GitHub</a>
               </div>
             </div>
@@ -488,21 +515,23 @@
           <div class="projects-content" data-aos="zoom-in" data-aos-delay="500">
             <div class="content">
               <div class="project-img">
-                <img src="https://freehtml5.co/wp-content/uploads/2017/03/02_copilot.jpg" alt="Web Dashboard" />
+                <img src="https://static.manytools.com/efebfc06-c501-4c3b-b3d3-5cf80bc4192e.png_wm_1000.jpg"
+                  alt="Web Dashboard" />
               </div>
               <div class="year"><i class="bx bxs-calendar"></i> 2023</div>
-              <h3>Admin Dashboard</h3>
+              <h3>Email validation</h3>
               <p>
-                A responsive admin dashboard template with charts and data
-                visualizations created using Bootstrap and Chart.js.
+                Validate Emails with Lightning Precision. Enterprise-grade accuracy spots disposables, spam traps, and
+                syntax errors instantly — ensuring every message reaches real inboxes without compromise.
               </p>
               <div class="tech-tags">
-                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">Html</span>
                 <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">Css</span>
+                <span class="tech-tag">Rest-API</span>
               </div>
               <div class="btn-box">
-                <a href="https://codewithmereram.github.io/codewithmereram_Admin-Dashboard.project/" class="btn">Live
+                <a href="https://emailvalidationprince.netlify.app/" class="btn">Live
                   Demo</a>
                 <a href="https://github.com/codewithmereram/codewithmereram_Admin-Dashboard.project"
                   class="btn">GitHub</a>
@@ -840,6 +869,49 @@
         </a>
         <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_BoEiE9n3qixKWEBT4_1757523273247_completion_certificate.pdf"
           class="btn">
+          <i class="bx bx-download"></i> Download PDF
+        </a>
+      </div>
+    </div>
+    </div>
+    <!-- Certificate 8 - Additional for demonstration -->
+    <div class="certificate-card" data-category="Web Development" data-aos="zoom-in" data-aos-delay="600">
+      <div class="certificate-badge">VERIFIED</div>
+      <div class="certificate-header">
+        <i class="certificate-icon bx bx-code"></i>
+        <h3>HTML Training | MUIT</h3>
+      </div>
+      <div class="certificate-body">
+        <h4 class="certificate-title">
+          Spoken Tutorial IIT Bombay
+        </h4>
+        <div class="certificate-info">
+          <div class="certificate-info-item">
+            <i class="bx bx-building"></i>
+            <span>IIT Bombay</span>
+          </div>
+          <div class="certificate-info-item">
+            <i class="bx bx-calendar"></i>
+            <span>Issued: 20 December
+              2025 • No Expiration</span>
+          </div>
+          <div class="certificate-info-item">
+            <i class="bx bx-id-card"></i>
+            <span>Credential ID: 3968208DRC</span>
+          </div>
+        </div>
+        <div class="certificate-skills">
+          <span class="skill">Flexbox</span>
+          <span class="skill">CSS</span>
+          <span class="skill">Grid</span>
+          <span class="skill">Sass</span>
+        </div>
+      </div>
+      <div class="certificate-footer">
+        <a href="https://ik.imagekit.io/sguvpu53p/PRINCE-CHAURASIYA-Participant-Certificate%20(1).pdf" class="btn">
+          <i class="bx bx-show"></i> View Certificate
+        </a>
+        <a href="https://ik.imagekit.io/sguvpu53p/PRINCE-CHAURASIYA-Participant-Certificate%20(1).pdf" class="btn">
           <i class="bx bx-download"></i> Download PDF
         </a>
       </div>
@@ -1243,15 +1315,7 @@
             <div>Chat on WhatsApp</div>
           </div>
         </a>
-        <a href="https://www.snapchat.com/add/codewithmereram" target="_blank" class="chat-option">
-          <div class="chat-option-icon" style="background: #FFFC00;">
-            <i class="bx bxl-snapchat"></i>
-          </div>
-          <div class="chat-option-text">
-            <div>Snapchat</div>
-            <div>Message on bxl-snapchat</div>
-          </div>
-        </a>
+
         <a href="https://t.me/mrprincechaurasiya" target="_blank" class="chat-option">
           <div class="chat-option-icon" style="background: #0088cc;">
             <i class="bx bxl-telegram"></i>
@@ -1282,7 +1346,7 @@
   <footer class="footer">
     <div class="footer-text">
       <p>&copy; 2026 Mr.Prince Chaurasiya All rights reserved.</p>
-      <!-- <p>Portfolio by Prince Chaurasiya &copy; 2026</p> -->
+      <!-- <p>Portfolio by Prince Chaurasiya &copy; 2025</p> -->
       <span class="animate scroll" style="--i: 1"></span>
     </div>
     <div class="footer-iconTop">
@@ -1398,8 +1462,103 @@
       }, 1000);
     }
   </script>
+  <script>
+    /* ==================== 1. SCROLL PROGRESS BAR ==================== */
+    window.onscroll = function () {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
+
+      // Also update active nav link
+      let sections = document.querySelectorAll('section');
+      let navLinks = document.querySelectorAll('header nav a');
+
+      sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+          navLinks.forEach(links => {
+            links.classList.remove('active');
+            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+          });
+        }
+      });
+    };
+
+    /* ==================== 2. TYPING ANIMATION (Typed.js) ==================== */
+    const typed = new Typed('.multiple-text', {
+      strings: ['Full Stack Developer', 'Web Designer', 'Software Engineer', 'Tech Enthusiast'],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+    });
+
+    /* ==================== 3. 3D TILT EFFECT FOR CARDS ==================== */
+    // Apply to Projects and Certificates
+    VanillaTilt.init(document.querySelectorAll(".projects-content, .certificate-card, .education-content"), {
+      max: 15,           // Max tilt rotation (degrees)
+      speed: 400,        // Speed of the enter/exit transition
+      glare: true,       // Add a light glare effect
+      "max-glare": 0.3,  // Opacity of the glare
+    });
+
+    /* ==================== 4. PARTICLES.JS CONFIGURATION ==================== */
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#00abf0" }, // Change this to your theme color
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" },
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00abf0", // Line color
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 4,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 
 </html>
-
-
